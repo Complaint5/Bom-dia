@@ -1,0 +1,40 @@
+#Configurações do servidor
+server:
+  port: 8080
+  error:
+    include-stacktrace: never
+
+#Configurações para mandar email
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${email}
+    password: token do gmail
+    properties: 
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  datasource:
+    url: jdbc:h2:mem:test
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: false
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: false
+  h2:
+    console:
+      path: /h2
+      enabled: true
+
+#Variáveis
+email: "email@gmail.com"
+ip: "http://ip da maquina"
